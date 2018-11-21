@@ -1,0 +1,21 @@
+<html>
+  <table>
+    <tr>
+      <td><%= link_to("new subject",) %> </td>
+    </tr>
+    <tr>
+      <th><div text-align="Left">#</div></th>
+      <th>Page</th>
+    </tr>
+    <tr>
+      <% @pages.each do |page| %>
+      <% id = page.id %>
+      <td><%= page.id %></td>
+      <td> <%= page.name %></td>
+      <td><%= link_to("Show", page_path(id)) %></td>
+      <td><%=link_to("Edit", edit_page_path(page.id)) %></td>
+      <td><%= link_to("Delete", delete_page_path(page.id)) %></td>
+      <% end %>
+    </tr>
+  </table<
+  </html>

@@ -1,0 +1,18 @@
+
+<%= link_to('Create new section', new_section_path) %>
+<% @sections.each do |section| %>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+  </tr>
+  <tr>
+    <td><%= section.id %></td>
+    <td><%= section.name %></td>
+    <td><%= link_to("Show", section_path(section.id)) %></td>
+    <td><%= link_to("Edit", edit_section_path(section.id)) %></td>
+    <td><%= link_to("Delete", delete_section_path(section.id)g) %></td>
+  </tr>
+  <% end %>
+
+</table>

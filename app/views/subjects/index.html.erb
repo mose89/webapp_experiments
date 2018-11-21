@@ -1,2 +1,23 @@
-<h1>Subjects#index</h1>
-<p>Find me in app/views/subjects/index.html.erb</p>
+<html>
+
+  <table>
+    <tr>
+      <td><%= link_to("new subject", new_subject_path) %> </td>
+    </tr>
+    <tr>
+      <th><div text-align="Left">#</div></th>
+      <th>Subject</th>
+    </tr>
+    <% @subjects.each do |subject| %>
+    <tr>
+      <% id = subject.id %>
+      <td><%= subject.id %></td>
+      <td> <%= subject.name %></td>
+      <td><%= link_to("Show", subject_path(subject.id)) %></td>
+      <td><%=link_to("Edit", edit_subject_path(subject.id)) %></td>
+      <td><%= link_to("Delete", delete_subject_path(subject.id)) %></td>
+    </tr>
+    <br>
+    <% end %>
+  </table>
+  </html>
