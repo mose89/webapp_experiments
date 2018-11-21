@@ -1,4 +1,6 @@
 class AccessController < ApplicationController
+  before_action :confirm_logged_in, :only => [:menu]
+
   def menu
     @subjects = Subject.all
   end
@@ -27,5 +29,14 @@ class AccessController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "You have successfully been logged out"
     redirect_to(access_login_path)
+  end
+
+  private
+
+  def confirm_logged_in
+    unless session[:user_id]
+      flash[:notice] = "You need to be logged in to access this page"
+      redirect_to('/access/login')
+    end
   end
 end
