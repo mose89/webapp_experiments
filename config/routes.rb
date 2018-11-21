@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'access/menu'
+  get 'access/login'
+  post 'access/attempt_login'
+  get 'access/logout'
   # get 'sections/new'
   # get 'sections/index'
   # get 'sections/show'
