@@ -26,8 +26,8 @@ class SubjectsController < ApplicationController
   end
 
   def update
-    @subject = Subject.update_attributes(subject_params)
-    if @subject.save
+    @subject = Subject.find(params[:id])
+    if @subject.update_attributes(subject_params)
       flash[:notice] = "You have successfully updated your Subject"
       redirect_to(subject_path(@subject.id))
     else

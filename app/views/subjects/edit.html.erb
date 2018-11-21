@@ -1,2 +1,21 @@
-<h1>Subjects#edit</h1>
-<p>Find me in app/views/subjects/edit.html.erb</p>
+<h1>Edit Page</h1>
+<%= link_to("Return to main navigation", subjects_path) %><br>
+
+
+<%= form_for @subject do |f| %>
+<table>
+  <tr>
+    <th>name</th>
+    <td> <%= f.text_field :name %> </td>
+  </tr>
+  <tr>
+    <th>position</th>
+    <td> <%= f.text_field :position %> </td>
+  </tr>
+  <tr>
+    <th>visible</th>
+    <td> <%= f.text_field :visble %> </td>
+  </tr>
+</table>
+  <%= f.submit "Update subject" %>
+<% end %>
